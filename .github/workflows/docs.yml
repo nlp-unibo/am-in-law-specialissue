@@ -1,4 +1,4 @@
-name: Deploy Sphinx documentation to GitHub Pages
+name: Deploy Static Webpage to GitHub Pages
 
 on:
   push:
@@ -23,17 +23,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.10"
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Tell GitHub exactly which folder to host
-          # This is usually docs/_build/html or docs/build/html
-          path: /
+          # Tells GitHub to host the files in the root of your repository
+          path: '.'
 
   deploy:
     environment:
