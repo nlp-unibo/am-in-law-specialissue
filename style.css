@@ -326,3 +326,96 @@ a:hover {
         margin-left: 0;
     }
 }
+
+.mail-form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.mail-form[hidden],
+.mail-form [hidden] {
+    display: none;
+}
+
+.mail-form label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    font-weight: 700;
+}
+
+.mail-form label small {
+    color: var(--muted);
+    font-weight: 400;
+}
+
+.mail-form input,
+.mail-form select,
+.mail-form textarea {
+    width: 100%;
+    padding: 0.6rem 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface);
+    color: var(--ink);
+    font: inherit;
+    font-weight: 400;
+}
+
+.mail-form input:focus-visible,
+.mail-form select:focus-visible,
+.mail-form textarea:focus-visible {
+    outline: 2px solid var(--brand);
+    outline-offset: 1px;
+}
+
+.mail-form .is-wide,
+.mail-subject,
+.mail-actions,
+.mail-hint {
+    grid-column: 1 / -1;
+}
+
+.mail-subject span {
+    margin-right: 0.5rem;
+    color: var(--muted);
+    font-weight: 700;
+}
+
+.mail-subject output {
+    overflow-wrap: anywhere;
+}
+
+.mail-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 1rem;
+}
+
+.mail-actions p {
+    margin: 0;
+}
+
+.mail-send[aria-disabled="true"] {
+    background: var(--muted);
+    cursor: not-allowed;
+}
+
+.mail-wait,
+.mail-hint {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+@media (max-width: 700px) {
+    .mail-form {
+        grid-template-columns: 1fr;
+    }
+}
+
+.mail-direct {
+    margin-top: 1rem;
+}
